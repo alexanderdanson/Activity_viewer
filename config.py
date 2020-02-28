@@ -15,6 +15,8 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['alex.danson2@gmail.com']
 
+    ACTIVITIES_PER_PAGE = 10
+
     #MAPBOX_JS CONFIG
     MAPBOX_ACCESS_KEY = 'pk.eyJ1IjoiYWxleGRhbnNvbiIsImEiOiJjazc2NWtvNnYwOG12M3RwZjMzdTVxZ3hhIn0.rFr105-gwEKcArfbJ10jqg'
     ROUTE_URL = "https://api.mapbox.com/directions/v5/mapbox/driving/{0}.json?access_token={1}&overview=full&geometries=geojson"

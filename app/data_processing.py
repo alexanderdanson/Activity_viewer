@@ -1,11 +1,14 @@
 import pandas as pd
+from app import db
+from app.models import Activity
+from flask_login import current_user
 
 def map_to_database(data):
     for row in data.index:
         activity = Activity()
         activity.title = data['Activity Name'][row]
         activity.timestamp = data['activity_date'][row]
-        activity.duration = data['elapsed_time'][row]
+        activity.duration = int(data['elapsed_time'][row])
         activity.distance = data['Distance'][row]
         activity.activity_type = data['activity_type'][row]
         activity.user_id = current_user.id

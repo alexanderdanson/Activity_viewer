@@ -9,10 +9,20 @@
                 </a>
             </td>
             <td>
-                {{ activity.athlete.username }} completed on {{ activity.timestamp }}
+                {% if activity.athlete == current_user %}
+                <a href="{{ url_for('profile', username=current_user.username) }}">
+                    You
+                </a>
+                {% else %}
+                <a href="{{ url_for('profile', username=activity.athlete.username) }}">
+                    {{ activity.athlete.username }}
+                </a>
+                {% endif %}
+                completed {{ activity.title }}
+                on {{ activity.timestamp }}
                 <br>
-                <span id="activity{{ activity.id }}">{{ activity.title }}</span>
-                <span> {{ activity.activity_type }}</span>
+                <span style="color:blue;font-weight:bold"> {{ activity.activity_type }}</span>
+                <br>
                 <span>{{ activity.distance}}KM within {{ "{0:.2f}".format(activity.duration / 3600) }} Hours</span>
             </td>
         </tr>

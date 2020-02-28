@@ -22,6 +22,13 @@ def before_request():
 @login_required
 def index():
     form = CreateActivityForm()
+    page = request.args.get('page', 1, type=int)
+    activities = current_user.follows_activities().paginate(
+        page, app.config['ACTIVITIES_PER_PAGE'], False)
+    next_url = url_for('index', page=activities.next_num) \
+        if activities.has_next else None
+    prev_url = url_for('index', page=activities.prev_num) \
+        if activities.has_prev else None
     if form.validate_on_submit():
         duration = (form.duration_hrs.data * 3600) + (form.duration_min.data * 60) + form.duration_sec.data
         activity = Activity(title=form.title.data, activity_type=form.activity_type.data,
@@ -30,7 +37,20 @@ def index():
         db.session.add(activity)
         db.session.commit()
         flash('Your activity was successfully created!')
-    return render_template("index.html", form=form)
+    return render_template("index.html", title="Home", form=form, activities=activities.items,
+                           next_url=next_url, prev_url=prev_url)
+
+@app.route('/explore')
+@login_required
+def explore():
+    page = request.args.get('page', 1, type=int)
+    activities = Activity.query.order_by(Activity.timestamp.desc()).paginate(
+        page, app.config['ACTIVITIES_PER_PAGE'], False)
+    next_url = url_for('index', page=activities.next_num) \
+        if activities.has_next else None
+    prev_url = url_for('index', page=activities.prev_num) \
+        if activities.has_prev else None
+    return render_template('index.html', title='Explore', activities=activities.items, next_url=next_url, prev_url=prev_url)
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
@@ -73,8 +93,21 @@ def logout():
 @app.route('/profile/<username>', methods=['GET', 'POST'])
 @login_required
 def profile(username):
-    form = UploadForm()
     user = User.query.filter_by(username=username).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    activities = user.activities.order_by(Activity.timestamp.desc()).paginate(
+        page, app.config['ACTIVITIES_PER_PAGE'], False)
+    next_url = url_for('profile', username=user.username, page=activities.next_num) \
+        if activities.has_next else None
+    prev_url = url_for('profile', username=user.username, page=activities.prev_num) \
+        if activities.has_prev else None
+    return render_template('profile.html', title="Profile", user=user, page=page, activities=activities.items,
+                           next_url=next_url, prev_url=prev_url)
+
+@app.route('/bulk_upload', methods=['GET', 'POST'])
+@login_required
+def bulk_upload():
+    form = UploadForm()
     if form.validate_on_submit():
         filename = secure_filename(form.file.data.filename)
         form.file.data.save('{}'.format(app.config['UPLOAD_FOLDER']) + filename)
@@ -83,8 +116,8 @@ def profile(username):
         data_processing.map_to_database(data)
         os.remove('{}'.format(app.config['UPLOAD_FOLDER']) + filename)
         flash("Your upload was successful")
-        return render_template('profile.html', form=form)
-    return render_template('profile.html', form=form, user=user)
+        redirect(url_for('bulk_upload'))
+    return render_template('bulk_upload.html', title="Bulk Upload", form=form)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
