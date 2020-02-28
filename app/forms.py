@@ -31,11 +31,11 @@ class RegistrationForm(FlaskForm):
 class CreateActivityForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     activity_type = SelectField('Activity Type', validators=[DataRequired()],
-                                choices=[('running', 'Running'),
-                                         ('cross-country_skiing', 'Cross-Country Skiing'),
-                                         ('cycling', 'Cycling'),
-                                         ('swimming', 'Swimming'),
-                                         ('walking', 'Walking')])
+                                choices=[('Running', 'Running'),
+                                         ('Cross-country_skiing', 'Cross-Country Skiing'),
+                                         ('Cycling', 'Cycling'),
+                                         ('Swimming', 'Swimming'),
+                                         ('Walking', 'Walking')])
     distance = DecimalField('Distance (KM)', places=2)
     duration_hrs = IntegerField('Hours')
     duration_min = IntegerField('Minutes')

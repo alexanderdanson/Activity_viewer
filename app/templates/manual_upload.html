@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+<h2>Upload an Activity</h2>
+
+<body>
+    <form action="", method="post">
+        {{ wtf.quick_form(form) }}
+    </form>
+    <br>
+</body>
+
+{% endblock %}

@@ -21,7 +21,6 @@ def before_request():
 @app.route('/index', methods = ['GET', 'POST'])
 @login_required
 def index():
-    form = CreateActivityForm()
     page = request.args.get('page', 1, type=int)
     activities = current_user.follows_activities().paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
@@ -29,15 +28,7 @@ def index():
         if activities.has_next else None
     prev_url = url_for('index', page=activities.prev_num) \
         if activities.has_prev else None
-    if form.validate_on_submit():
-        duration = (form.duration_hrs.data * 3600) + (form.duration_min.data * 60) + form.duration_sec.data
-        activity = Activity(title=form.title.data, activity_type=form.activity_type.data,
-                            distance=form.distance.data, duration=duration,
-                            user_id=current_user.id)
-        db.session.add(activity)
-        db.session.commit()
-        flash('Your activity was successfully created!')
-    return render_template("index.html", title="Home", form=form, activities=activities.items,
+    return render_template("index.html", title="Home", activities=activities.items,
                            next_url=next_url, prev_url=prev_url)
 
 @app.route('/explore')
@@ -46,9 +37,9 @@ def explore():
     page = request.args.get('page', 1, type=int)
     activities = Activity.query.order_by(Activity.timestamp.desc()).paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
-    next_url = url_for('index', page=activities.next_num) \
+    next_url = url_for('explore', page=activities.next_num) \
         if activities.has_next else None
-    prev_url = url_for('index', page=activities.prev_num) \
+    prev_url = url_for('explore', page=activities.prev_num) \
         if activities.has_prev else None
     return render_template('index.html', title='Explore', activities=activities.items, next_url=next_url, prev_url=prev_url)
 
@@ -118,6 +109,20 @@ def bulk_upload():
         flash("Your upload was successful")
         redirect(url_for('bulk_upload'))
     return render_template('bulk_upload.html', title="Bulk Upload", form=form)
+
+@app.route('/manual_upload', methods=['GET', 'POST'])
+@login_required
+def manual_upload():
+    form = CreateActivityForm()
+    if form.validate_on_submit():
+        duration = (form.duration_hrs.data * 3600) + (form.duration_min.data * 60) + form.duration_sec.data
+        activity = Activity(title=form.title.data, activity_type=form.activity_type.data,
+                            distance=form.distance.data, duration=duration,
+                            user_id=current_user.id)
+        db.session.add(activity)
+        db.session.commit()
+        flash('Your activity was successfully created!')
+    return render_template('manual_upload.html', title="Manual Activity Upload", form=form)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required

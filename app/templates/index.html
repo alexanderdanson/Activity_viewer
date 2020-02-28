@@ -10,13 +10,6 @@
 <h1>{{ title }}</h1>
 
 <body>
-    {% if form %}
-    Upload your activities below:
-    <form action="" method="post">
-        {{ wtf.quick_form(form) }}
-    </form>
-    {% endif %}
-    <br>
 
     {% for activity in activities %}
         {% include '_activity.html' %}
