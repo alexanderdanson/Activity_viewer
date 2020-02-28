@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+
+<h1>Edit Your Profile</h1>
+<body>
+
+<form action="", method="post">
+        {{ wtf.quick_form(form) }}
+</form>
+</body>
+
+{% endblock %}

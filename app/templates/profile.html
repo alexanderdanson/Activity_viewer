@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+    <table class="table table-default">
+        <tr valign="top">
+            <td ><img src="{{ user.avatar(128) }}"></td>
+            <td>
+                <h1>User: {{ user.username }}</h1>
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+                {% if user == current_user %}
+                <a class="btn btn-default" href="{{url_for('edit_profile')}}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Your Profile</a>
+                {% elif not current_user.is_following(user) %}
+                <p><a href="{{ url_for('follow', username=user.username) }}">Follow</a></p>
+                {% else %}
+                <p><a href="{{ url_for('unfollow', username=user.username) }}">Unfollow</a></p>
+                {% endif %}
+            </td>
+
+        </tr>
+    </table>
+    {% if user == current_user %}
+    <h2>Perform Bulk Upload</h2>
+    <form action="", method="post", enctype="multipart/form-data">
+        {{ wtf.quick_form(form) }}
+    </form>
+<br>
+    {% endif %}
+
+    {% for activity in user.activities %}
+        {% include '_activity.html' %}
+    {% endfor %}
+
+
+{% endblock %}

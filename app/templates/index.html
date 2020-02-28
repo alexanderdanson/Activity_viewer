@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+
+<h1>Welcome to Activity Viewer!</h1>
+
+<body>
+
+    Upload your activities below:
+    <form action="" method="post">
+        {{ wtf.quick_form(form) }}
+    </form>
+
+    {% for activity in current_user.activities %}
+        {% include '_activity.html' %}
+    {% endfor %}
+
+</body>
+
+{% endblock %}
