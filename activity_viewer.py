@@ -5,3 +5,4 @@ from app.models import User, Activity
 def make_shell_context():
     return {'db': db, 'User': User, 'Activity': Activity}
 
+app.jinja_env.globals['db'] = db

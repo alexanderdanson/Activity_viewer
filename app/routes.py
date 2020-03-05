@@ -88,11 +88,14 @@ def profile(username):
     page = request.args.get('page', 1, type=int)
     activities = user.activities.order_by(Activity.timestamp.desc()).paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
+    total_distance = data_processing.total_column(Activity.distance, user.id)
+    total_time = data_processing.total_column(Activity.duration, user.id)
     next_url = url_for('profile', username=user.username, page=activities.next_num) \
         if activities.has_next else None
     prev_url = url_for('profile', username=user.username, page=activities.prev_num) \
         if activities.has_prev else None
     return render_template('profile.html', title="Profile", user=user, page=page, activities=activities.items,
+                           total_distance=total_distance, total_time=total_time,
                            next_url=next_url, prev_url=prev_url)
 
 @app.route('/bulk_upload', methods=['GET', 'POST'])

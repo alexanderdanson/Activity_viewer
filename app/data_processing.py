@@ -1,7 +1,8 @@
 import pandas as pd
 from app import db
-from app.models import Activity
+from app.models import Activity, User
 from flask_login import current_user
+from sqlalchemy import func
 
 def map_to_database(data):
     for row in data.index:
@@ -50,3 +51,8 @@ def Data_Cleanup(activities):
     activities.loc[roller_ski_index, 'Distance'] = activities['time_in_hours'] * 15
 
     return activities
+
+def total_column(column, user_id):
+    total_distance = db.session.query(func.sum(column)). \
+        filter(Activity.user_id == user_id).scalar()
+    return round(total_distance, 2)

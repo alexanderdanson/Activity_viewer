@@ -19,11 +19,13 @@
                 </a>
                 {% endif %}
                 completed {{ activity.title }}
-                on {{ activity.timestamp }}
+                <br>
+                <span>{{ activity.distance}}KM within {{ datetime.timedelta(seconds=activity.duration) }} </span>
                 <br>
                 <span style="color:blue;font-weight:bold"> {{ activity.activity_type }}</span>
                 <br>
-                <span>{{ activity.distance}}KM within {{ "{0:.2f}".format(activity.duration / 3600) }} Hours</span>
+                <em>{{ momentjs(activity.timestamp).calendar() }}</em>
+
             </td>
         </tr>
     </table>
