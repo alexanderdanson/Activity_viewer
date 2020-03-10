@@ -4,17 +4,17 @@
 <table class="table table-hover">
         <tr>
             <td width="70px">
-                <a href="{{ url_for('profile', username=activity.athlete.username) }}">
+                <a href="{{ url_for('main.profile', username=activity.athlete.username) }}">
                     <img src="{{ activity.athlete.avatar(50) }}" class="img-thumbnail">
                 </a>
             </td>
             <td>
                 {% if activity.athlete == current_user %}
-                <a href="{{ url_for('profile', username=current_user.username) }}">
+                <a href="{{ url_for('main.profile', username=current_user.username) }}">
                     You
                 </a>
                 {% else %}
-                <a href="{{ url_for('profile', username=activity.athlete.username) }}">
+                <a href="{{ url_for('main.profile', username=activity.athlete.username) }}">
                     {{ activity.athlete.username }}
                 </a>
                 {% endif %}
