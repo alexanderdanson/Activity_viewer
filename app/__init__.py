@@ -21,6 +21,10 @@ migrate = Migrate(app, db)
 app.jinja_env.globals['momentjs'] = momentjs
 app.jinja_env.globals['datetime'] = datetime
 
+# blueprints
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
+
 if not app.debug:
     if app.config['MAIL_SERVER']:
         auth = None
@@ -39,7 +43,7 @@ if not app.debug:
 
         if not os.path.exists('logs'):
             os.mkdir('logs')
-        file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
+        file_handler = RotatingFileHandler('logs/activity_viewer.log', maxBytes=10240,
                                            backupCount=10)
         file_handler.setFormatter(logging.Formatter(
             '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
@@ -47,6 +51,6 @@ if not app.debug:
         app.logger.addHandler(file_handler)
 
         app.logger.setLevel(logging.INFO)
-        app.logger.info('Microblog startup')
+        app.logger.info('Activity_Viewer startup')
 
-from app import routes, models, errors
+from app import routes, models
