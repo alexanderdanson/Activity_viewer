@@ -1,7 +1,55 @@
-from app import app
+import pandas as pd
+from app import db, app
+from app.models import Activity, User
+from flask_login import current_user
+from sqlalchemy import func
 from flask import render_template
 from geojson import Point, Feature
 import requests
+
+def Data_Cleanup(activities):
+    activities.rename(
+        columns={'Activity Date': 'activity_date', 'Activity Type': 'activity_type', 'Elapsed Time': 'elapsed_time'},
+        inplace=True)
+    activities["Distance"] = pd.to_numeric(activities["Distance"], errors="coerce")
+    activities['activity_date'] = pd.to_datetime(activities['activity_date'])
+
+    # drop_unused columns
+    activities.drop(
+        ['Activity Description', 'Activity Gear', 'Filename', 'Relative Effort', 'Commute'], axis=1,
+        inplace=True)
+
+    # fill null and 0 values
+
+    swim_mps = 0.83
+    activities['Distance'] = activities['Distance'].fillna((activities['elapsed_time'] * swim_mps) / 1000)
+
+    ride_index = (activities['activity_type'] == "Ride") & (activities['Distance'] == 0)
+    nordic_ski_index = (activities['activity_type'] == "Nordic Ski") & (activities['Distance'] == 0)
+    roller_ski_index = (activities['activity_type'] == "Roller Ski") & (activities['Distance'] == 0)
+
+    activities.loc[ride_index, 'Distance'] = (activities['elapsed_time'] * 27) / 3600
+    activities.loc[nordic_ski_index, 'Distance'] = (activities['elapsed_time'] * 13) / 3600
+    activities.loc[roller_ski_index, 'Distance'] = (activities['elapsed_time'] * 15) / 3600
+
+    return activities
+
+def map_to_database(data):
+    for row in data.index:
+        activity = Activity()
+        activity.title = data['Activity Name'][row]
+        activity.timestamp = data['activity_date'][row]
+        activity.duration = int(data['elapsed_time'][row])
+        activity.distance = data['Distance'][row]
+        activity.activity_type = data['activity_type'][row]
+        activity.user_id = current_user.id
+        db.session.add(activity)
+    db.session.commit()
+
+def total_column(column, user_id):
+    total_distance = db.session.query(func.sum(column)). \
+        filter(Activity.user_id == user_id).scalar()
+    return round(total_distance, 2)
 
 # MAPBOX_JS CODE TO TEST MAP FUNCTIONALITY
 @app.route('/mapbox_js')
@@ -9,7 +57,7 @@ def mapbox_js():
     route_data, waypoints = get_route_data()
     stop_locations = create_stop_locations_details()
     return render_template(
-        'mapbox_js.html',
+        'analytics/mapbox_js.html',
         ACCESS_KEY=app.config['MAPBOX_ACCESS_KEY'],
         route_data=route_data,
         stop_locations=stop_locations
@@ -75,6 +123,7 @@ def create_stop_locations_details():
         feature = Feature(geometry = point, properties = properties)
         stop_locations.append(feature)
     return stop_locations
+
 
 
 

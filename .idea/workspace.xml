@@ -5,14 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/analytics/data_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/errors/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/errors/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/errors/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/mapbox_js.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/analytics/mapbox_js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +46,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\analytics" />
+      <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\analytics" />
       <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\auth" />
       <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\errors" />
       <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\static" />
-      <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates" />
-      <recent name="C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\uploads" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -96,10 +97,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactoring error handling" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583855413209">
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584004782746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1583855413209" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
     <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1583836597290">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

@@ -2,7 +2,8 @@ from flask_login import current_user, login_required
 from flask import request, url_for, render_template, flash, redirect
 from app.main import bp
 from app.main.forms import UploadForm, CreateActivityForm, EditProfileForm
-from app import app, db, data_processing
+from app import app, db
+from app.analytics import data_processing
 from app.models import Activity, User
 from datetime import datetime
 import pandas as pd
