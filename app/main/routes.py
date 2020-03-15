@@ -133,3 +133,4 @@ def unfollow(username):
     db.session.commit()
     flash('You are not following {}.'.format(username))
     return redirect(url_for('main.profile', username=username))
+
