@@ -47,9 +47,13 @@ def map_to_database(data):
     db.session.commit()
 
 def total_column(column, user_id):
-    total_distance = db.session.query(func.sum(column)). \
+    total_column = db.session.query(func.sum(column)). \
         filter(Activity.user_id == user_id).scalar()
-    return round(total_distance, 2)
+    if total_column:
+        total_column = round(total_column, 2)
+    else:
+        total_column = 0
+    return total_column
 
 # MAPBOX_JS CODE TO TEST MAP FUNCTIONALITY
 @app.route('/mapbox_js')

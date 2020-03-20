@@ -9,6 +9,8 @@ from datetime import datetime
 import pandas as pd
 import os
 from werkzeug import secure_filename
+from werkzeug.urls import url_parse
+
 
 @bp.before_request
 def before_request():
@@ -119,6 +121,22 @@ def follow(username):
     flash('You are following {}!'.format(username))
     return redirect(url_for('main.profile', username=username))
 
+@bp.route('/like/<activity_id>')
+@login_required
+def like(activity_id):
+    activity = Activity.query.filter_by(id=activity_id).first()
+    if activity is None:
+        flash('Activity {} not found.'.format(activity.title))
+        return redirect(url_for('main.index'))
+    if current_user.likes_activity(activity):
+        current_user.unlike(activity)
+        flash('You no longer like {}!'.format(activity.title))
+    else:
+        current_user.like(activity)
+        flash('You like {}!'.format(activity.title))
+    db.session.commit()
+    return redirect(url_for('main.index'))
+
 @bp.route('/unfollow/<username>')
 @login_required
 def unfollow(username):
@@ -134,12 +152,14 @@ def unfollow(username):
     flash('You are not following {}.'.format(username))
     return redirect(url_for('main.profile', username=username))
 
-@bp.route('/delete_activity/<activity>')
+@bp.route('/delete_activity/<activity_id>')
 @login_required
-def delete_activity(activity):
-    activity = Activity.query.filter_by(id=activity).first()
+def delete_activity(activity_id):
+    activity = Activity.query.filter_by(id=activity_id).first()
     db.session.delete(activity)
     db.session.commit()
     flash('The following activity was successfully deleted: {}'.format(activity.title))
     return redirect(url_for('main.index'))
 
+
+# TODO add edit activity functionality

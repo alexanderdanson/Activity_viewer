@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- -->
+<!-- TODO add edit activity button if user is current user -->
+<!--TODO click number of likes to show users who like -->
+<!-- TODO add pop-up "are you sure you want to remove this activity?" -->
 
 <table class="table table-hover">
         <tr>
@@ -28,11 +32,21 @@
 
             </td>
             <td align="right">
-                {% if activity.athlete == current_user %}
-                <a href="{{ url_for('main.delete_activity', activity=activity.id) }}">
-                    <button class="">Delete</button>
+                {% if current_user.likes_activity(activity) %}
+                <a href="{{ url_for('main.like', activity_id=activity.id) }}">
+                    <button class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                </a>
+                {% else %}
+                <a href="{{ url_for('main.like', activity_id=activity.id) }}">
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span></button>
                 </a>
                 {% endif %}
+                {% if activity.athlete == current_user %}
+                <a href="{{ url_for('main.delete_activity', activity_id=activity.id) }}">
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                </a>
+                {% endif %}
+                {{ activity.liked_by.count() }} like this
             </td>
         </tr>
     </table>

@@ -11,6 +11,11 @@ followers = db.Table('followers',
                          db.Column('follows_id', db.Integer, db.ForeignKey('user.id'))
                          )
 
+likes = db.Table('likes',
+                        db.Column('athlete_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+                        db.Column('activity_id', db.Integer, db.ForeignKey('activity.id'), primary_key=True)
+                         )
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -24,6 +29,9 @@ class User(UserMixin, db.Model):
         primaryjoin=(followers.c.follower_id == id),
         secondaryjoin=(followers.c.follows_id == id),
         backref=db.backref('followers', lazy='dynamic'), lazy='dynamic')
+    liked_activities = db.relationship(
+        'Activity', secondary=likes,
+        backref=db.backref('liked_by', lazy='dynamic'), lazy='dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -43,13 +51,25 @@ class User(UserMixin, db.Model):
         if not self.is_following(user):
             self.follows.append(user)
 
+    def like(self, activity):
+        if not self.likes_activity(activity):
+            self.liked_activities.append(activity)
+
     def unfollow(self, user):
         if self.is_following(user):
             self.follows.remove(user)
 
+    def unlike(self, activity):
+        if self.likes_activity(activity):
+            self.liked_activities.remove(activity)
+
     def is_following(self, user):
         return self.follows.filter(
             followers.c.follows_id == user.id).count() > 0
+
+    def likes_activity(self, activity):
+        return self.liked_activities.filter(
+            likes.c.activity_id == activity.id).count() > 0
 
     def follows_activities(self):
         follows = Activity.query.join(
