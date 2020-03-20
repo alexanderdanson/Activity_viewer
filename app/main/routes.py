@@ -134,3 +134,10 @@ def unfollow(username):
     flash('You are not following {}.'.format(username))
     return redirect(url_for('main.profile', username=username))
 
+@bp.route('/delete_activity/<activity>')
+@login_required
+def delete_activity(activity):
+    activity = Activity.query.filter_by(id=activity).first()
+    flash('The following activity was successfully deleted: {}'.format(activity.title))
+    return redirect(url_for('main.index'))
+

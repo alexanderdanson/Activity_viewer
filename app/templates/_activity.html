@@ -27,6 +27,13 @@
                 <em>{{ momentjs(activity.timestamp).calendar() }}</em>
 
             </td>
+            <td align="right">
+                {% if activity.athlete == current_user %}
+                <a href="{{ url_for('main.delete_activity', activity=activity.id) }}">
+                    <button class="">Delete</button>
+                </a>
+                {% endif %}
+            </td>
         </tr>
     </table>
 </html>

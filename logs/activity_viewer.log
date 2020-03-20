@@ -42,3 +42,5 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'auth/reset_passwo
 2020-03-15 19:43:15,153 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
 2020-03-15 19:48:45,700 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
 2020-03-15 19:51:02,860 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+2020-03-20 09:19:17,865 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+2020-03-20 09:21:04,898 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
