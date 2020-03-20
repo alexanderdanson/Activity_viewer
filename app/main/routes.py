@@ -138,6 +138,7 @@ def unfollow(username):
 @login_required
 def delete_activity(activity):
     activity = Activity.query.filter_by(id=activity).first()
+    # todo add delete activity functionality
     flash('The following activity was successfully deleted: {}'.format(activity.title))
     return redirect(url_for('main.index'))
 
