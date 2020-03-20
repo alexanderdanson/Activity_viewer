@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flaskenv" beforeDir="false" afterPath="$PROJECT_DIR$/.flaskenv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/email.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/auth/email/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/auth/email/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/auth/email/reset_password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/auth/email/reset_password.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,19 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1583836598835</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="email support + delete activity button">
+      <created>1584705977564</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1584705977564</updated>
+    </task>
+    <task id="LOCAL−00004" summary="delete activity button">
+      <created>1584706089466</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1584706089466</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,21 +109,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="removing password" />
     <MESSAGE value="refactoring error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring error handling" />
+    <MESSAGE value="email support + delete activity button" />
+    <MESSAGE value="delete activity button" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete activity button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584004782746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584706078559">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584706088060">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584706078559" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584706088060" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1583420046647">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1583420046647" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584706095084">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584706095084" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584692147473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
