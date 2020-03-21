@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
 
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" type="text/css" href="/static/CSS/login.css">
+{% endblock %}
 
 {% block app_content %}
-  <h1>Sign In</h1>
-    <form action="" method="post" novalidate>
+<body>
+<br>
+<br>
+<div class="container" align="center">
+  <div class="d-flex justify-content-center h-100">
+  <div class="user_card">
+    <div>
+      <div class="brand_logo_container">
+        <img src="/static/cross_country_skiing.png" alt="Logo" class="brand_logo">
+      </div>
+    </div>
+    <div class="d-flex justify-content-center form_container">
+      <form action="" method="post" novalidate>
         {{ wtf.quick_form(form) }}
-    </form>
+      </form>
+    </div>
 
-    <p>New User? <a href="{{ url_for('auth.register') }}">Click to Register!</a></p>
-    <p>Forgot Your Password?<a href="{{ url_for('auth.reset_password_request') }}">Click to Reset It</a></p>
-
+    <div class="mt-4">
+      <div class="d-flex justify-content-center links">
+        New User? <a href="{{ url_for('auth.register') }}" class="ml-2">Click to Register!</a>
+      </div>
+      <div class="d-flex justify-content-center links">
+        Forgot Your Password? <a href="{{ url_for('auth.reset_password_request') }}" class="ml-2">Click to Reset It</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
 {% endblock %}
 
 </html>

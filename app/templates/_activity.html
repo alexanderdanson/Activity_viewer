@@ -29,6 +29,8 @@
                 <span style="color:blue;font-weight:bold"> {{ activity.activity_type }}</span>
                 <br>
                 <em>{{ momentjs(activity.timestamp).calendar() }}</em>
+                <br>
+                <span>{{ activity.liked_by.count() }} like this</span>
 
             </td>
             <td align="right">
@@ -38,15 +40,14 @@
                 </a>
                 {% else %}
                 <a href="{{ url_for('main.like', activity_id=activity.id) }}">
-                    <button class="btn btn-danger"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                    <button class="btn btn-info"><span class="glyphicon glyphicon-thumbs-up"></span></button>
                 </a>
                 {% endif %}
                 {% if activity.athlete == current_user %}
                 <a href="{{ url_for('main.delete_activity', activity_id=activity.id) }}">
-                    <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                    <button class="btn btn-info"><span class="glyphicon glyphicon-trash"></span></button>
                 </a>
                 {% endif %}
-                {{ activity.liked_by.count() }} like this
             </td>
         </tr>
     </table>
