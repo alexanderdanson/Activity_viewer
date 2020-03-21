@@ -17,47 +17,48 @@
 
 {% block navbar %}
 
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{url_for('main.index')}}">Activity Viewer</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="{{ url_for('main.index') }}">Home<span class="sr-only">(current)</span></a></li>
-        {% if current_user.is_authenticated %}
-        <li><a href="{{ url_for('main.explore') }}">Explore</a></li>
-        <li><a href="{{ url_for('main.profile', username=current_user.username) }}">Profile</a></li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload Activities <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url_for('main.manual_upload') }}">Add Manual Activity</a></li>
-            <li role="separator" class="divider"></li>
-              <li><a href="{{ url_for('main.bulk_upload') }}">Bulk Upload</a></li>
-          </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{url_for('main.index')}}">Spåra</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.index') }}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.explore') }}">Explore</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('main.profile', username=current_user.username) }}">Profile</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Upload Activity
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ url_for('main.manual_upload') }}">Add Manual Activity</a>
+          <a class="dropdown-item" href="{{ url_for('main.bulk_upload') }}">Bulk Upload</a>
+        </div>
+      </li>
+      {% endif %}
+      {% if current_user.is_anonymous %}
+        <li class="nav-item">
+          <a class= "nav-link" href="{{ url_for('auth.login') }}">Login</a>
         </li>
-        {% endif %}
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {% if current_user.is_anonymous %}
-        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+        </li>
         {% else %}
-        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-        {% endif %}
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+
 </nav>
 {% endblock %}
 
