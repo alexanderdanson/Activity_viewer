@@ -3,7 +3,11 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #FFFFFF !important;
+		}
+
+		body {
+		    background-image: url("idre-fjall-spar.jpg");
+		    background-size: auto;
 		}
 
 		.container {
