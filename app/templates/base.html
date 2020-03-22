@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <script src="/static/js/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 <html lang="en">
 
@@ -9,6 +10,7 @@
 {{super()}}
 <link rel="stylesheet" type="text/css" href="/static/CSS/base.css">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 {% endblock %}
 
 {% block title %}
@@ -63,6 +65,7 @@
 {% endblock %}
 
 {% block content %}
+<br>
 <div class="container">
     {% with messages = get_flashed_messages() %}
         {% if messages %}

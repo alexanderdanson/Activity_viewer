@@ -161,12 +161,5 @@ def delete_activity(activity_id):
     flash('The following activity was successfully deleted: {}'.format(activity.title))
     return redirect(url_for('main.index'))
 
-@login_required
-@app.route('/dashboard')
-def chart():
-    labels = ["January","February","March","April","May","June","July","August"]
-    values = [10,9,8,7,6,4,7,8]
-    colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
-    return render_template('dashboard.html')
 
 # TODO add edit activity functionality

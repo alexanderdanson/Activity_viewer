@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/CSS/idre-fjall-spar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/cross_country_square.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/CSS/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/CSS/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/CSS/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/CSS/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/dashboard.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +129,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1584804730532</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="minor css changes">
+      <created>1584897547264</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1584897547264</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,25 +161,26 @@
     <MESSAGE value="adding &quot;like activity&quot; functionality" />
     <MESSAGE value="style improvements (mostly login page)" />
     <MESSAGE value="upgrade to Bootstrap 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade to Bootstrap 4" />
+    <MESSAGE value="minor css changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor css changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584004782746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584804728761">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584897545728">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584804728761" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584897545728" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584789865023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584789865023" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584804733231">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584897550155">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584804733231" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584897550155" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584692147473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
