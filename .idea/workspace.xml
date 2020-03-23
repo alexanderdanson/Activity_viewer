@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/logs/activity_viewer.log.10" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/analytics/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/analytics/data_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/CSS/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/CSS/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/dashboard.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.9" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +143,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1584897547264</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="chartist js examples added">
+      <created>1584900588781</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1584900588781</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,29 +176,30 @@
     <MESSAGE value="style improvements (mostly login page)" />
     <MESSAGE value="upgrade to Bootstrap 4" />
     <MESSAGE value="minor css changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor css changes" />
+    <MESSAGE value="chartist js examples added" />
+    <option name="LAST_COMMIT_MESSAGE" value="chartist js examples added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584004782746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584897545728">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1584900587185">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584897545728" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584900587185" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584789865023">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584789865023" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584897550155">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584900597984">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584897550155" />
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584692147473">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584900597984" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584992340911">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584692147473" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584992340911" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584721292203">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

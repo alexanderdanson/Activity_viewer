@@ -2,10 +2,13 @@ import pandas as pd
 from app import db, app
 from app.models import Activity, User
 from flask_login import current_user
-from sqlalchemy import func
+from sqlalchemy import func, create_engine
 from flask import render_template
 from geojson import Point, Feature
 import requests
+import sqlite3
+
+
 
 def Data_Cleanup(activities):
     activities.rename(
@@ -54,6 +57,26 @@ def total_column(column, user_id):
     else:
         total_column = 0
     return total_column
+
+def total_per_activity(id):
+    connection = sqlite3.connect('app.db')
+    cursor = connection.cursor()
+    select_query = """SELECT activity_type, SUM(duration) FROM Activity WHERE user_id = ? GROUP BY activity_type"""
+    cursor.execute(select_query, (id,))
+    records = cursor.fetchall()
+    pie_keys = []
+    pie_values = []
+    for a, b in records:
+        pie_keys.append(a)
+        pie_values.append(b)
+    return pie_keys, pie_values
+
+
+def get_activities_by_date(from_year, from_month, from_day, to_year, to_month, to_day):
+    from_date = pd.Timestamp(from_year, from_month, from_day)
+    to_date = pd.Timestamp(to_year, to_month, to_day)
+    filtered_activities = Activity.query.filter(Activity.timestamp.between(from_date, to_date))
+    return filtered_activities
 
 # MAPBOX_JS CODE TO TEST MAP FUNCTIONALITY
 @app.route('/mapbox_js')

@@ -1,4 +1,6 @@
-2020-03-12 18:07:10,242 ERROR: Exception on /auth/reset_password_request [POST] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
+2020-03-10 11:34:54,035 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:54]
+2020-03-10 16:32:21,141 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:56]
+2020-03-10 16:32:25,071 ERROR: Exception on /index [GET] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +14,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\routes.py", line 56, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\email.py", line 18, in send_password_reset_email
-    user=user, token=token),
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\routes.py", line 31, in index
+    next_url=next_url, prev_url=prev_url)
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,8 +28,19 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\auth\email\reset_password.txt", line 5, in top-level template code
-    {{ url_for('auth/reset_password', token=token, _external=True) }}
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\index.html", line 6, in top-level template code
+    {% import "bootstrap/wtf.html" as wtf %}
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\base.html", line 6, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 12, in block "body"
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\base.html", line 55, in block "navbar"
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
@@ -38,9 +51,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'auth/reset_password' with values ['token']. Did you mean 'auth.reset_password' instead?
-2020-03-12 18:09:16,858 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
-2020-03-12 18:09:25,025 ERROR: Exception on /auth/reset_password_request [POST] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'logout'. Did you mean 'auth.logout' instead?
+2020-03-10 16:34:33,012 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:56]
+2020-03-10 16:34:42,048 ERROR: Exception on /auth/login [GET] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,10 +67,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\routes.py", line 56, in reset_password_request
-    send_password_reset_email(user)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\email.py", line 20, in send_password_reset_email
-    user=user, token=token))
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\routes.py", line 24, in login
+    return render_template('auth/login.html', title='Sign In', form=form)
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -68,8 +79,22 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\auth\email\reset_password.html", line 10, in top-level template code
-    <p>{{ url_for('auth/reset_password', token=token, _external=True) }}</p>
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\auth\login.html", line 5, in top-level template code
+    {% import "bootstrap/wtf.html" as wtf %}
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\base.html", line 6, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 3, in block "doc"
+    <html{% block html_attribs %}{% endblock html_attribs %}>
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 11, in block "html"
+    {%- endblock metas %}
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 13, in block "body"
+    {%- block styles %}
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\base.html", line 72, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\templates\auth\login.html", line 14, in block "app_content"
+    <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2215, in handle_url_build_error
@@ -80,6 +105,5 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'auth/reset_password' with values ['token']. Did you mean 'auth.reset_password' instead?
-2020-03-12 18:09:45,957 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
-2020-03-12 18:09:53,482 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'auth.register' instead?
+2020-03-10 16:35:57,758 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:56]
