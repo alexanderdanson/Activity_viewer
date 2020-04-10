@@ -20,7 +20,7 @@ def before_request():
 @login_required
 def index():
     page = request.args.get('page', 1, type=int)
-    pie_keys, pie_values = data_processing.total_per_activity(current_user.id)
+    #pie_keys, pie_values = data_processing.total_per_activity(current_user.id)
     activities = current_user.follows_activities().paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
     next_url = url_for('main.index', page=activities.next_num) \
@@ -28,7 +28,7 @@ def index():
     prev_url = url_for('main.index', page=activities.prev_num) \
         if activities.has_prev else None
     return render_template("index.html", title="Home", activities=activities.items,
-                           next_url=next_url, prev_url=prev_url, pie_keys=pie_keys, pie_values=pie_values)
+                           next_url=next_url, prev_url=prev_url)
 
 @bp.route('/explore')
 @login_required
