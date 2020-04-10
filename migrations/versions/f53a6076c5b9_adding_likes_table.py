@@ -32,7 +32,7 @@ def upgrade():
     op.create_table('activity',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('timestamp', sa.DateTime(), nullable=True),
-    sa.Column('title', sa.String(length=64), nullable=True),
+    sa.Column('title', sa.String(length=128), nullable=True),
     sa.Column('activity_type', sa.String(length=64), nullable=True),
     sa.Column('distance', sa.Float(), nullable=True),
     sa.Column('duration', sa.Integer(), nullable=True),
