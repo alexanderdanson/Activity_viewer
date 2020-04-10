@@ -59,6 +59,7 @@ def total_column(column, user_id):
     return total_column
 
 def total_per_activity(id):
+    # TODO Use another method, this won't work in prod.
     connection = sqlite3.connect('app.db')
     cursor = connection.cursor()
     select_query = """SELECT activity_type, SUM(duration) FROM Activity WHERE user_id = ? GROUP BY activity_type"""
