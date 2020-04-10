@@ -100,6 +100,7 @@ class Activity(db.Model):
     activity_type = db.Column(db.String, index=True)
     distance = db.Column(db.Float)
     duration = db.Column(db.Integer)
+    intensity = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 @login.user_loader

@@ -50,3 +50,16 @@ Traceback (most recent call last):
     dst = open(dst, "wb")
 FileNotFoundError: [Errno 2] No such file or directory: '/static/activities.csv'
 2020-04-10 18:37:39,471 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:15:21,853 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:18:47,001 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:21:56,998 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:25:30,757 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:25:46,500 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:26:06,502 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:26:18,642 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:28:15,292 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:29:06,682 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:29:25,567 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:34:06,207 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:35:42,603 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 19:36:25,403 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]

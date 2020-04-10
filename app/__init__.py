@@ -18,7 +18,7 @@ bootstrap = Bootstrap(app)
 login = LoginManager(app)
 login.login_view = 'auth.login'
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+migrate = Migrate(app, db, compare_type=True)
 mail = Mail(app)
 
 # JINJA GLOBAL VARIABLES

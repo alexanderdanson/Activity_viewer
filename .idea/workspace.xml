@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/5767e638323c_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/e0f84b97fc30_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/analytics/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/analytics/data_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/f53a6076c5b9_adding_likes_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/versions/f53a6076c5b9_adding_likes_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +177,13 @@
       <option name="presentableId" value="LOCAL−00017" />
       <updated>1586538265025</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL−00018" summary="bug not allowing large strings">
+      <created>1586538733378</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1586538733378</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,10 +222,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1586538263903">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1586538732335">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586538263903" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586538732335" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1585224754589">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
