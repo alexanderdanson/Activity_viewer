@@ -7,9 +7,6 @@ from app.analytics import data_processing
 from app.models import Activity, User
 from datetime import datetime
 import pandas as pd
-import os
-from werkzeug import secure_filename
-from werkzeug.urls import url_parse
 
 
 @bp.before_request
@@ -69,13 +66,9 @@ def profile(username):
 def bulk_upload():
     form = UploadForm()
     if form.validate_on_submit():
-        filename = secure_filename(form.file.data.filename)
-        #form.file.data.save(url_for('static', filename=filename))
-        #data = pd.read_csv((url_for('static', filename=filename)), index_col=0)
         data = pd.read_csv(form.file.data, index_col=0)
         data = data_processing.Data_Cleanup(data)
         data_processing.map_to_database(data)
-        #os.remove(url_for('static', filename=filename))
         flash("Your upload was successful")
         redirect(url_for('main.bulk_upload'))
     return render_template('bulk_upload.html', title="Bulk Upload", form=form)

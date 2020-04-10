@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/activity_viewer.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/activity_viewer.log.9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
