@@ -1,1 +1,1 @@
-web: flask db upgrade; gunicorn website:app
+web: flask db upgrade; gunicorn activity_viewer:app
