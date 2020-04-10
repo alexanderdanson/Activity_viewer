@@ -63,3 +63,8 @@ FileNotFoundError: [Errno 2] No such file or directory: '/static/activities.csv'
 2020-04-10 19:34:06,207 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
 2020-04-10 19:35:42,603 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
 2020-04-10 19:36:25,403 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 21:06:18,900 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 21:10:37,319 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 21:12:20,679 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 21:12:56,945 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
+2020-04-10 21:13:28,769 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:68]
