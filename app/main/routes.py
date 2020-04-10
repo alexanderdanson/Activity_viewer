@@ -34,7 +34,7 @@ def index():
 @login_required
 def explore():
     page = request.args.get('page', 1, type=int)
-    pie_keys, pie_values = data_processing.total_per_activity(current_user.id)
+    # pie_keys, pie_values = data_processing.total_per_activity(current_user.id)
     activities = Activity.query.order_by(Activity.timestamp.desc()).paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
     next_url = url_for('main.explore', page=activities.next_num) \
@@ -42,7 +42,7 @@ def explore():
     prev_url = url_for('main.explore', page=activities.prev_num) \
         if activities.has_prev else None
     return render_template('index.html', title='Explore', activities=activities.items,
-                           next_url=next_url, prev_url=prev_url, pie_keys=pie_keys, pie_values=pie_values)
+                           next_url=next_url, prev_url=prev_url)
 
 @bp.route('/profile/<username>', methods=['GET', 'POST'])
 @login_required
