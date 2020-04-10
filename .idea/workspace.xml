@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +142,13 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1585001952749</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="work with database queries to modify charts">
+      <created>1586533371898</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1586533371898</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,18 +184,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1585001951113">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1586533370752">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1585001951113" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586533370752" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1585224754589">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585224754589" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1585001954978">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1586533375902">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1585001954978" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1586533375902" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585078777797">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
