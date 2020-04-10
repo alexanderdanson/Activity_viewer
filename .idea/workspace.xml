@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="25c0a880-b99c-4712-bb19-cce656a70aff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +153,13 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1586533929445</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="adding missing packages">
+      <created>1586534120985</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1586534120985</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,25 +189,26 @@
     <MESSAGE value="chartist js examples added" />
     <MESSAGE value="work with database queries to modify charts" />
     <MESSAGE value="logging changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="logging changes" />
+    <MESSAGE value="adding missing packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding missing packages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584004782746">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584004782746" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1586533928332">
+    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1586534119302">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586533928332" />
+    <state x="291" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1586534119302" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1585224754589">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585224754589" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1586533932495">
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1586534127998">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1586533932495" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1586534127998" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1585078777797">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
