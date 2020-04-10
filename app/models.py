@@ -96,7 +96,7 @@ class User(UserMixin, db.Model):
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    title = db.Column(db.String, index=True)
+    title = db.Column(db.String(128), index=True)
     activity_type = db.Column(db.String(64), index=True)
     distance = db.Column(db.Float)
     duration = db.Column(db.Integer)
