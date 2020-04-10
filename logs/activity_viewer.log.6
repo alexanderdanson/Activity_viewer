@@ -1,72 +1,4 @@
-2020-03-12 10:24:13,931 ERROR: Exception on /mapbox_js [GET] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
-    (self._dns_host, self.port), self.timeout, **extra_kw
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
-    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File "C:\Users\alexander.danson\AppData\Local\Continuum\anaconda3\lib\socket.py", line 748, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno 11001] getaddrinfo failed
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
-    chunked=chunked,
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connectionpool.py", line 376, in _make_request
-    self._validate_conn(conn)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connectionpool.py", line 994, in _validate_conn
-    conn.connect()
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connection.py", line 300, in connect
-    conn = self._new_conn()
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
-    self, "Failed to establish a new connection: %s" % e
-urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x0000020367DE2FC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\adapters.py", line 449, in send
-    timeout=timeout
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
-    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\urllib3\util\retry.py", line 436, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.mapbox.com', port=443): Max retries exceeded with url: /directions/v5/mapbox/driving/-22.7066262,64.0027441;-22.1092311,64.0317168;-21.18802,63.99879;-19.0184548,63.4194089;-18.8904333,63.5302354;-15.2222918,64.2538507;-14.01951,64.913435;-14.0179538,65.2622588;-14.4037548,65.2640083;-17.3624953,66.0427545;-20.723364,65.659786;-20.9580216,65.3958953;-21.9704238,65.0722555;-22.8767959,65.0189519;-23.7260926,64.8929619;-23.905765,64.785334;-21.6480148,64.174537;-20.7535337,64.0792223;-21.93955,64.14586.json?access_token=pk.eyJ1IjoiYWxleGRhbnNvbiIsImEiOiJjazc2NWtvNnYwOG12M3RwZjMzdTVxZ3hhIn0.rFr105-gwEKcArfbJ10jqg&overview=full&geometries=geojson (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020367DE2FC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\analytics\data_processing.py", line 57, in mapbox_js
-    route_data, waypoints = get_route_data()
-  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\analytics\data_processing.py", line 99, in get_route_data
-    result = requests.get(route_url)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\api.py", line 76, in get
-    return request('get', url, params=params, **kwargs)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\api.py", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\sessions.py", line 530, in request
-    resp = self.send(prep, **send_kwargs)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\sessions.py", line 643, in send
-    r = adapter.send(request, **kwargs)
-  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\requests\adapters.py", line 516, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.mapbox.com', port=443): Max retries exceeded with url: /directions/v5/mapbox/driving/-22.7066262,64.0027441;-22.1092311,64.0317168;-21.18802,63.99879;-19.0184548,63.4194089;-18.8904333,63.5302354;-15.2222918,64.2538507;-14.01951,64.913435;-14.0179538,65.2622588;-14.4037548,65.2640083;-17.3624953,66.0427545;-20.723364,65.659786;-20.9580216,65.3958953;-21.9704238,65.0722555;-22.8767959,65.0189519;-23.7260926,64.8929619;-23.905765,64.785334;-21.6480148,64.174537;-20.7535337,64.0792223;-21.93955,64.14586.json?access_token=pk.eyJ1IjoiYWxleGRhbnNvbiIsImEiOiJjazc2NWtvNnYwOG12M3RwZjMzdTVxZ3hhIn0.rFr105-gwEKcArfbJ10jqg&overview=full&geometries=geojson (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x0000020367DE2FC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
-2020-03-12 10:25:34,220 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:60]
-2020-03-12 12:29:48,835 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:60]
-2020-03-12 12:30:35,908 ERROR: Exception on /auth/login [POST] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
+2020-03-12 12:31:08,405 ERROR: Exception on /auth/login [POST] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -93,3 +25,70 @@ Traceback (most recent call last):
   File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2020-03-12 12:33:23,541 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:60]
+2020-03-12 17:16:54,402 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+2020-03-12 17:19:29,335 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+2020-03-12 17:40:18,584 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
+2020-03-12 17:40:23,636 ERROR: Exception on /auth/reset_password_request [GET] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\routes.py", line 64, in reset_password_request
+    return render_template('auth/reset_password_request', title='Reset Password Request', form=form)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\loaders.py", line 117, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: auth/reset_password_request
+2020-03-12 17:41:06,442 ERROR: Exception on /auth/reset_password_request [GET] [in c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\auth\routes.py", line 64, in reset_password_request
+    return render_template('auth/reset_password_request.html', title='Reset Password Request', form=form)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\jinja2\loaders.py", line 117, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\alexander.danson\documents\github\activity_viewer\venv\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: auth/reset_password_request
+2020-03-12 17:41:17,483 INFO: Activity_Viewer startup [in C:\Users\alexander.danson\Documents\GitHub\Activity_viewer\app\__init__.py:64]
