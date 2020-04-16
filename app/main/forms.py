@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from app.models import User, Activity
 from wtforms import StringField, SelectField, DecimalField, IntegerField, SubmitField, FileField, TextAreaField
-from wtforms.validators import DataRequired, Length, ValidationError
+from wtforms.validators import DataRequired, Length, ValidationError, NumberRange
 
 class CreateActivityForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
@@ -11,10 +11,10 @@ class CreateActivityForm(FlaskForm):
                                          ('Cycling', 'Cycling'),
                                          ('Swimming', 'Swimming'),
                                          ('Walking', 'Walking')])
-    distance = DecimalField('Distance (KM)', places=2)
-    duration_hrs = IntegerField('Hours')
-    duration_min = IntegerField('Minutes')
-    duration_sec = IntegerField('Seconds')
+    distance = DecimalField('Distance', places=2, validators=[NumberRange(min=0.01, max=9999)])
+    duration_hrs = SelectField('Hours', choices=[(val, val) for val in range(1,100)], coerce=int)
+    duration_min = SelectField('Minutes', choices=[(val, val) for val in range(60)], coerce=int)
+    duration_sec = SelectField('Seconds', choices=[(val, val) for val in range(60)], coerce=int)
     submit = SubmitField('Submit')
 
 class UploadForm(FlaskForm):

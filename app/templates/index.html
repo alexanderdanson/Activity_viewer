@@ -6,9 +6,12 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block app_content %}
-<h1>{{ title }}</h1>
 
 <body>
+
+  {% if activities %}
+
+
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-md-4">
@@ -23,23 +26,32 @@
     </div>
 </div>
 
+    
+
     {% for activity in activities %}
         {% include '_activity.html' %}
     {% endfor %}
     <nav aria-label="...">
-        <ul class="pager">
-            <li class="previous{% if not prev_url %} disabled{% endif %}">
-                <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> Newer Activities
-                </a>
+        <ul class="pagination">
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}" class="page-link">Previous</a>
             </li>
-            <li class="next{% if not next_url %} disabled{% endif %}">
-                <a href="{{ next_url or '#' }}">
-                    Older Activities <span aria-hidden="true">&rarr;</span>
-                </a>
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}" class="page-link">Next</a>
             </li>
         </ul>
     </nav>
+
+    {% else %}
+
+    <h1>Welcome to Spåra!</h1>
+
+    <p>We hope you'll enjoy using this app.</p>
+    <p>To get started, upload your first activity by clicking here:</p>
+
+    <a href="/manual_upload"><button type="button" class="btn btn-primary"> Let's spåra! </button></a>
+
+    {% endif %}
 </body>
 
 <script>

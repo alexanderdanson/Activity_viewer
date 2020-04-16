@@ -70,7 +70,7 @@ def bulk_upload():
         data = data_processing.Data_Cleanup(data)
         data_processing.map_to_database(data)
         flash("Your upload was successful")
-        redirect(url_for('main.bulk_upload'))
+        return redirect(url_for('main.bulk_upload'))
     return render_template('bulk_upload.html', title="Bulk Upload", form=form)
 
 @bp.route('/manual_upload', methods=['GET', 'POST'])
@@ -85,6 +85,7 @@ def manual_upload():
         db.session.add(activity)
         db.session.commit()
         flash('Your activity was successfully created!')
+        return redirect(url_for('main.index'))
     return render_template('manual_upload.html', title="Manual Activity Upload", form=form)
 
 @bp.route('/edit_profile', methods=['GET', 'POST'])
@@ -124,7 +125,6 @@ def like(activity_id):
     activity = Activity.query.filter_by(id=activity_id).first()
     if activity is None:
         flash('Activity {} not found.'.format(activity.title))
-        return redirect(url_for('main.index'))
     if current_user.likes_activity(activity):
         current_user.unlike(activity)
         flash('You no longer like {}!'.format(activity.title))
@@ -132,6 +132,7 @@ def like(activity_id):
         current_user.like(activity)
         flash('You like {}!'.format(activity.title))
     db.session.commit()
+    #TODO solve how to return without redirecting...
     return redirect(url_for('main.index'))
 
 @bp.route('/unfollow/<username>')
