@@ -8,11 +8,12 @@ class CreateActivityForm(FlaskForm):
     activity_type = SelectField('Activity Type', validators=[DataRequired()],
                                 choices=[('Running', 'Running'),
                                          ('Cross-country_skiing', 'Cross-Country Skiing'),
+                                         ('Roller-Skiing', 'Roller-Skiing'),
                                          ('Cycling', 'Cycling'),
                                          ('Swimming', 'Swimming'),
                                          ('Walking', 'Walking')])
     distance = DecimalField('Distance', places=2, validators=[NumberRange(min=0.01, max=9999)])
-    duration_hrs = SelectField('Hours', choices=[(val, val) for val in range(1,100)], coerce=int)
+    duration_hrs = SelectField('Hours', choices=[(val, val) for val in range(100)], coerce=int)
     duration_min = SelectField('Minutes', choices=[(val, val) for val in range(60)], coerce=int)
     duration_sec = SelectField('Seconds', choices=[(val, val) for val in range(60)], coerce=int)
     submit = SubmitField('Submit')

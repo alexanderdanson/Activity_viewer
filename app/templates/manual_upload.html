@@ -30,27 +30,19 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
-        
-        <div class='form-group'>
-            <label>Duration</label>
-            <fieldset>
-                {{ form.duration_hrs }}
-                <small>hrs</small>
-                {% for error in form.duration_hrs.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-                {{ form.duration_min }}
-                <small>min</small>
-                {% for error in form.duration_min.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-                {{ form.duration_sec }}
-                <small>sec</small>
-                {% for error in form.duration_sec.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-            </fieldset>   
+        Duration
+        <div class="row">
+            <div class='form-group col-md-auto'>
+                {{ wtf.form_field(form.duration_hrs, class='form-control') }}   
+            </div>
+            <div class='form-group col-md-auto'>
+                {{ wtf.form_field(form.duration_min, class='form-control') }}   
+            </div>
+            <div class='form-group col-md-auto'>
+                {{ wtf.form_field(form.duration_sec, class='form-control') }}   
+            </div>
         </div>
+        
 
         <div>{{ wtf.form_field(form.submit)}}</div>
     </form>
