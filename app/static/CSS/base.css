@@ -9,3 +9,11 @@ a {
 a:hover {
     color: #D1D8DB
 }
+
+.unit-field {
+    font-size: smaller;
+}
+
+.form-control-label {
+    display: none;
+}

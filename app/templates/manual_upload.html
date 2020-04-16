@@ -7,10 +7,12 @@
 <h2>Upload an Activity</h2>
 
 <body>
+    <container>
     <form class="form form-horizontal", method="post" role="form">
         {{ form.csrf_token }}
 
         <div class="form-group">
+            <label class="">Title</label>
             {{ wtf.form_field(form.title) }}
             {% for error in form.title.errors %}
             <span style="color: red;">[{{ error }}]</span>
@@ -18,6 +20,7 @@
         </div>
 
         <div class="form-group">
+            <label class="">Activity Type</label>
             {{ wtf.form_field(form.activity_type) }}
             {% for error in form.activity_type.errors %}
             <span style="color: red;">[{{ error }}]</span>
@@ -25,23 +28,28 @@
         </div>
         
         <div class="form-group">
+            <label class="">Distance</label>
             {{ wtf.form_field(form.distance) }}
             {% for error in form.distance.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </div>
-        Duration
+        <label class="">Duration</label>
         <div class="row">
-            <div class='form-group col-md-auto'>
-                {{ wtf.form_field(form.duration_hrs, class='form-control') }}   
-            </div>
-            <div class='form-group col-md-auto'>
+            <span class='form-group col-md-auto'>
+                <small class="unit-field"><em>Hrs</em></small>
+                {{ wtf.form_field(form.duration_hrs, class='form-control') }}  
+            </span>
+            <span class='form-group col-md-auto'>
+                <small class="unit-field"><em>Min</em></small>
                 {{ wtf.form_field(form.duration_min, class='form-control') }}   
-            </div>
-            <div class='form-group col-md-auto'>
+            </span>
+            <span class='form-group col-md-auto'>
+                <small class="unit-field" ><em>Sec</em></small>
                 {{ wtf.form_field(form.duration_sec, class='form-control') }}   
-            </div>
+            </span>
         </div>
+    </container>
         
 
         <div>{{ wtf.form_field(form.submit)}}</div>
