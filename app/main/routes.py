@@ -132,8 +132,7 @@ def like(activity_id):
         current_user.like(activity)
         flash('You like {}!'.format(activity.title))
     db.session.commit()
-    #TODO solve how to return without redirecting...
-    return redirect(url_for('main.index'))
+    return redirect(request.referrer)
 
 @bp.route('/unfollow/<username>')
 @login_required
