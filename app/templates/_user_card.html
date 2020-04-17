@@ -1,0 +1,32 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.profile', username=user.username) }}">
+                <img src="{{ user.avatar(50) }}" class="img-thumbnail">
+            </a>
+        </td>
+        <td>
+            <a href="{{ url_for('main.profile', username=user.username) }}">
+                {{ user.username }}
+            </a>
+            {% if user.about_me %}
+            <em> {{ user.about_me }} </em>
+            {% endif %}
+            <br>
+            <em>{{ momentjs(user.last_seen).calendar() }}</em>
+            <br>
+        </td>
+        <td align="right">
+            {% if current_user.is_following(user) %}
+            <a href="{{ url_for('main.unfollow', username=user.username) }}">
+                <button class="btn btn-danger">Stop Following</button>
+            </a>
+            {% else %}
+            <a href="{{ url_for('main.follow', username=user.username) }}">
+                <button class="btn btn-success">Follow</button>
+            </a>
+            {% endif %}
+            
+        </td>
+    </tr>
+</table>
