@@ -1,5 +1,6 @@
 import pandas as pd
 from app import db, app
+from app.analytics import bp
 from app.models import Activity, User
 from flask_login import current_user
 from sqlalchemy import func, create_engine
@@ -7,8 +8,17 @@ from flask import render_template
 from geojson import Point, Feature
 import requests
 import sqlite3
+from flask.json import jsonify
 
+@bp.route('/total_distance_per_activity/<user_id>')
+def total_distance_per_activity(user_id):
+    distance_per_activity = total_per_activity(Activity.distance, user_id)
+    return jsonify(distance_per_activity)
 
+@bp.route('/total_time_per_activity/<user_id>')
+def total_time_per_activity(user_id):
+    distance_per_activity = total_per_activity(Activity.duration, user_id)
+    return jsonify(distance_per_activity)   
 
 def Data_Cleanup(activities):
     activities.rename(
@@ -58,20 +68,14 @@ def total_column(column, user_id):
         total_column = 0
     return total_column
 
-def total_per_activity(id):
-    # TODO Use another method, this won't work in prod.
-    connection = sqlite3.connect('app.db')
-    cursor = connection.cursor()
-    select_query = """SELECT activity_type, SUM(duration) FROM Activity WHERE user_id = ? GROUP BY activity_type"""
-    cursor.execute(select_query, (id,))
-    records = cursor.fetchall()
-    pie_keys = []
-    pie_values = []
-    for a, b in records:
-        pie_keys.append(a)
-        pie_values.append(b)
-    return pie_keys, pie_values
-
+def total_per_activity(column, user_id):
+    acitvity_totals_list = []
+    total_per_activity = db.session.query(Activity.activity_type, func.sum(column)). \
+        filter(Activity.user_id == user_id).group_by(Activity.activity_type)
+    for u in total_per_activity:
+        acitvity_totals_list.append(u)
+    activity_totals_dict = dict(acitvity_totals_list)
+    return activity_totals_dict
 
 def get_activities_by_date(from_year, from_month, from_day, to_year, to_month, to_day):
     from_date = pd.Timestamp(from_year, from_month, from_day)
@@ -79,7 +83,7 @@ def get_activities_by_date(from_year, from_month, from_day, to_year, to_month, t
     filtered_activities = Activity.query.filter(Activity.timestamp.between(from_date, to_date))
     return filtered_activities
 
-# MAPBOX_JS CODE TO TEST MAP FUNCTIONALITY
+# MAPBOX_JS CODE TO TEST MAP FUNCTIONALITY (WIP)
 @app.route('/mapbox_js')
 def mapbox_js():
     route_data, waypoints = get_route_data()

@@ -8,7 +8,7 @@ class CreateActivityForm(FlaskForm):
     activity_type = SelectField('Activity Type', validators=[DataRequired()],
                                 choices=[('Running', 'Running'),
                                          ('Cross-country_skiing', 'Cross-Country Skiing'),
-                                         ('Roller-Skiing', 'Roller-Skiing'),
+                                         ('Roller Ski', 'Roller Ski'),
                                          ('Cycling', 'Cycling'),
                                          ('Swimming', 'Swimming'),
                                          ('Walking', 'Walking')])

@@ -9,6 +9,8 @@ from datetime import datetime
 import pandas as pd
 
 
+#TODO move "like" and "follow" functionality to own blueprint called "social" 
+
 @bp.before_request
 def before_request():
     if current_user.is_authenticated:
@@ -20,7 +22,6 @@ def before_request():
 @login_required
 def index():
     page = request.args.get('page', 1, type=int)
-    #pie_keys, pie_values = data_processing.total_per_activity(current_user.id)
     activities = current_user.follows_activities().paginate(
         page, app.config['ACTIVITIES_PER_PAGE'], False)
     next_url = url_for('main.index', page=activities.next_num) \
@@ -153,10 +154,14 @@ def unfollow(username):
 @login_required
 def delete_activity(activity_id):
     activity = Activity.query.filter_by(id=activity_id).first()
-    db.session.delete(activity)
-    db.session.commit()
-    flash('The following activity was successfully deleted: {}'.format(activity.title))
-    return redirect(url_for('main.index'))
+    if activity.athlete.id == current_user.id:
+        db.session.delete(activity)
+        db.session.commit()
+        flash('The following activity was successfully deleted: {}'.format(activity.title))
+    else:
+        flash('Stop trying to delete other peoples\' activities!')
+    return redirect(request.referrer)
+
 
 
 # TODO add edit activity functionality
