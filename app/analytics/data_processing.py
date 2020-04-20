@@ -10,14 +10,16 @@ import requests
 import sqlite3
 from flask.json import jsonify
 
-@bp.route('/total_distance_per_activity/<user_id>')
+@bp.route('/total_distance_per_activity/<user_id>', methods=['POST'])
 def total_distance_per_activity(user_id):
     distance_per_activity = total_per_activity(Activity.distance, user_id)
     return jsonify(distance_per_activity)
 
-@bp.route('/total_time_per_activity/<user_id>')
+@bp.route('/total_time_per_activity/<user_id>', methods=['POST'])
 def total_time_per_activity(user_id):
     distance_per_activity = total_per_activity(Activity.duration, user_id)
+    for k, v in distance_per_activity.items():
+        distance_per_activity[k] = v/3600
     return jsonify(distance_per_activity)   
 
 def Data_Cleanup(activities):
@@ -75,6 +77,8 @@ def total_per_activity(column, user_id):
     for u in total_per_activity:
         acitvity_totals_list.append(u)
     activity_totals_dict = dict(acitvity_totals_list)
+    for k, v in activity_totals_dict.items():
+        activity_totals_dict[k] = int(v)
     return activity_totals_dict
 
 def get_activities_by_date(from_year, from_month, from_day, to_year, to_month, to_day):
