@@ -77,8 +77,6 @@ def total_per_activity(column, user_id):
     for u in total_per_activity:
         acitvity_totals_list.append(u)
     activity_totals_dict = dict(acitvity_totals_list)
-    for k, v in activity_totals_dict.items():
-        activity_totals_dict[k] = int(v)
     return activity_totals_dict
 
 def get_activities_by_date(from_year, from_month, from_day, to_year, to_month, to_day):
