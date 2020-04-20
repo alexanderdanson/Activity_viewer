@@ -29,7 +29,7 @@
         
         <div class="form-group">
             <label class="">Distance</label>
-            {{ wtf.form_field(form.distance) }}
+            {{ wtf.form_field(form.distance, placeholder="Enter Distance in KM") }}
             {% for error in form.distance.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}

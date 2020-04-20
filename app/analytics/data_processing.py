@@ -3,7 +3,7 @@ from app import db, app
 from app.analytics import bp
 from app.models import Activity, User
 from flask_login import current_user
-from sqlalchemy import func, create_engine
+from sqlalchemy import func, create_engine, desc
 from flask import render_template
 from geojson import Point, Feature
 import requests
@@ -72,10 +72,11 @@ def total_column(column, user_id):
 
 def total_per_activity(column, user_id):
     acitvity_totals_list = []
-    total_per_activity = db.session.query(Activity.activity_type, func.sum(column)). \
-        filter(Activity.user_id == user_id).group_by(Activity.activity_type)
+    total_per_activity = db.session.query(Activity.activity_type, func.sum(column).label('totals')). \
+        filter(Activity.user_id == user_id).group_by(Activity.activity_type).order_by(desc('totals')).limit(5)
     for u in total_per_activity:
         acitvity_totals_list.append(u)
+    print(acitvity_totals_list)
     activity_totals_dict = dict(acitvity_totals_list)
     return activity_totals_dict
 

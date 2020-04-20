@@ -13,10 +13,14 @@
 
   <div class='row'>
     <div class="col-sm">
-      <div class="ct-chart ct-perfect-fourth" id="chart1"></div>
-    </div>
-    <div class="col-sm">
-      <div class="ct-chart ct-perfect-fourth" id="chart2"></div>
+      <select onchange="generateChart(this.value)" class="custom-select" id="graph-selector">
+        <option value="Time">Time per Activity Type</option>
+        <option value="Distance">Distance per Activity Type</option>
+      </select>
+      <div class="ct-chart ct-perfect-fourth"></div>
+      <div class="col-sm">
+      
+      </div>
     </div>
   </div>
   
@@ -52,13 +56,22 @@
 
 <script>
 
-generateDurationChart();
-generateDistanceChart();
+var chart = generateDurationChart();
+
+function generateChart(val) {
+  if (val==="Time") {
+    var chart = generateDurationChart();
+  } else if (val==="Distance") {
+    var chart = generateDistanceChart();
+  }
+}
+
+
 
 function generateDurationChart() {
   $.post('/total_time_per_activity/{{current_user.id}}').done(function(response) {
     var data = {labels: Object.keys(response), series: [Object.values(response)]};
-    new Chartist.Bar('#chart1', data);
+    return Chartist.Bar('.ct-chart', data);
     // success callback
   }).fail(function() {
     response.console.error;
@@ -69,7 +82,15 @@ function generateDurationChart() {
 function generateDistanceChart() {
   $.post('/total_distance_per_activity/{{current_user.id}}').done(function(response) {
     var data = {labels: Object.keys(response), series: [Object.values(response)]};
-    new Chartist.Bar('#chart2', data);
+    var options = {
+      axisY: {
+        offset: 60, 
+        labelInterpolationFnc: function(value) {
+        return value + 'km';
+        }
+      }
+    };
+    new Chartist.Bar('.ct-chart', data, options);
     // success callback
   }).fail(function() {
     response.console.error;

@@ -78,6 +78,8 @@ def bulk_upload():
 @login_required
 def manual_upload():
     form = CreateActivityForm()
+    if request.method == 'GET':
+        form.title.data = "New Activity"
     if form.validate_on_submit():
         duration = (form.duration_hrs.data * 3600) + (form.duration_min.data * 60) + form.duration_sec.data
         activity = Activity(title=form.title.data, activity_type=form.activity_type.data,

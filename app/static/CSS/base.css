@@ -17,3 +17,7 @@ a:hover {
 .form-control-label {
     display: none;
 }
+
+#graph-selector {
+    margin-bottom: 20px;
+}

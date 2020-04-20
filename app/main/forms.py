@@ -6,12 +6,12 @@ from wtforms.validators import DataRequired, Length, ValidationError, NumberRang
 class CreateActivityForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     activity_type = SelectField('Activity Type', validators=[DataRequired()],
-                                choices=[('Running', 'Running'),
-                                         ('Cross-country_skiing', 'Cross-Country Skiing'),
+                                choices=[('Run', 'Run'),
+                                         ('Cross-country_ski', 'Cross-Country Ski'),
                                          ('Roller Ski', 'Roller Ski'),
-                                         ('Cycling', 'Cycling'),
-                                         ('Swimming', 'Swimming'),
-                                         ('Walking', 'Walking')])
+                                         ('Ride', 'Ride'),
+                                         ('Swim', 'Swim'),
+                                         ('Walk', 'Walk')])
     distance = DecimalField('Distance', places=2, validators=[NumberRange(min=0.01, max=9999)])
     duration_hrs = SelectField('Hours', choices=[(val, val) for val in range(100)], coerce=int)
     duration_min = SelectField('Minutes', choices=[(val, val) for val in range(60)], coerce=int)
