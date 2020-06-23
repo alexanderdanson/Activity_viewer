@@ -91,6 +91,7 @@ def manual_upload():
         return redirect(url_for('main.index'))
     return render_template('manual_upload.html', title="Manual Activity Upload", form=form)
 
+# TODO enable uploading own profile picture
 @bp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():

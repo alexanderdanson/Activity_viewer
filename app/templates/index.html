@@ -66,8 +66,6 @@ function generateChart(val) {
   }
 }
 
-
-
 function generateDurationChart() {
   $.post('/total_time_per_activity/{{current_user.id}}').done(function(response) {
     var data = {labels: Object.keys(response), series: [Object.values(response)]};
